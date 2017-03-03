@@ -1,0 +1,6 @@
+/home/aut/study/dev-env/cmake/CMakeFiles/rebuild_cache.dir
+/home/aut/study/dev-env/cmake/CMakeFiles/edit_cache.dir
+/home/aut/study/dev-env/cmake/CMakeFiles/main.dir
+/home/aut/study/dev-env/cmake/src/CMakeFiles/edit_cache.dir
+/home/aut/study/dev-env/cmake/src/CMakeFiles/rebuild_cache.dir
+/home/aut/study/dev-env/cmake/src/CMakeFiles/Test.dir
