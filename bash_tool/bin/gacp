@@ -9,9 +9,9 @@
 set -e
 
 # 一键提交代码至svn远程仓库
-declare COMMONT=$1
-if [ !$1 ]; then
-	COMMONT="一些小改动"
+declare COMMONT="一些小改动"
+if [ $# -eq 1 ]; then
+	COMMONT=$1
 fi
 
 git add ./* && git status && git commit -m "$COMMONT" && git push
