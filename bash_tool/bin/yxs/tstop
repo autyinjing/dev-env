@@ -1,0 +1,82 @@
+#########################################################################
+# File Name: tstop.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月13日 星期五 08时05分26秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 测试用关闭服务器
+
+function EchoUsage() {
+    echo ""
+    echo "  Usage: tstop ctr | dbp | dbm | gtw | gtm | gms | lgc"
+    echo ""
+    exit 1
+}
+
+function Stop() {
+    cd $1
+    if [ -f $2 ]; then
+        pid=`cat $2`
+        echo "pid: $pid"
+        kill $pid
+    fi
+    rm -rf core.*
+    rm -rf log/*
+}
+
+if [ ! $# -eq 1 ]; then
+    EchoUsage
+fi
+
+declare dest_path="/home/aut/yxs/AutTest"
+declare pid_file_name
+declare bin_name
+
+case $1 in
+    "ctr")
+        dest_path="$dest_path/Ctrl"
+        pid_file_name="ctrlserver.pid"
+        bin_name="aut_ctrlserver"
+        ;;
+    "dbp")
+        dest_path="$dest_path/DBProc"
+        pid_file_name="dbprocsvrd.pid"
+        bin_name="aut_dbproc"
+        ;;
+    "dbm")
+        dest_path="$dest_path/DBProcMgr"
+        pid_file_name="dbprocmgr.pid"
+        bin_name="aut_dbprocmgr"
+        ;;
+    "gtw")
+        dest_path="$dest_path/Gateway"
+        pid_file_name="gateway.pid"
+        bin_name="aut_gateway"
+        ;;
+    "gtm")
+        dest_path="$dest_path/GatewayMgr"
+        pid_file_name="gatewaymgr.pid"
+        bin_name="aut_gatewaymgr"
+        ;;
+    "gms")
+        dest_path="$dest_path/GMServer"
+        pid_file_name="gmserver.pid"
+        bin_name="aut_gmserver"
+        ;;
+    "lgc")
+        dest_path="$dest_path/Logic"
+        pid_file_name="server.pid"
+        bin_name="aut_logic"
+        ;;
+    *)
+        echo ""
+        echo "  Error Para !!! "
+        EchoUsage
+        ;;
+esac
+
+Stop $dest_path $pid_file_name $bin_name

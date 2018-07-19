@@ -1,0 +1,17 @@
+#########################################################################
+# File Name: gacp.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月09日 星期一 06时22分33秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 一键提交代码至svn远程仓库
+declare COMMONT=$1
+if [ !$1 ]; then
+	COMMONT="一些小改动"
+fi
+
+git add ./* && git status && git commit -m "$COMMONT" && git push

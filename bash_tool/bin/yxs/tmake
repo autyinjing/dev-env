@@ -1,0 +1,72 @@
+#########################################################################
+# File Name: tmake.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月13日 星期五 04时17分18秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 测试用快速编译脚本
+function EchoUsage() {
+    echo ""
+    echo "  Usage: tmake all | pto | ctr | dbp | dbm | gtw | gtm | gms | lgc"
+    echo ""
+    exit 1
+}
+
+if [ ! $# -eq 1 ]; then
+    EchoUsage
+fi
+
+declare dest_path="/home/aut/yxs/GameJoyo/SourceCode"
+
+case $1 in
+    "all")
+        dest_path="$dest_path/../Scripts"
+        cd $dest_path && sh build_all.sh fr
+        ;;
+    "pto")
+        echo ""
+        echo -e "\033[34m***** GameSoCommon Proto *****\033[0m"
+        echo ""
+        cd "$dest_path/../../GameSoCommon/scripts" && sh build_cpp.sh
+        cd "$dest_path/../Proto" && make -j4
+
+        echo ""
+        echo -e "\033[34m***** THKServer Proto *****\033[0m"
+        echo ""
+        cd "$dest_path/../../THKServer/ProtoSrc" && sh build_cpp.sh
+        cd "$dest_path/../../THKServer/Proto" && make -j4
+        exit 0
+        ;;
+    "ctr")
+        dest_path="$dest_path/CtrlServer"
+        ;;
+    "dbp")
+        dest_path="$dest_path/DBProc"
+        ;;
+    "dbm")
+        dest_path="$dest_path/DBProcMgr"
+        ;;
+    "gtw")
+        dest_path="$dest_path/Gateway"
+        ;;
+    "gtm")
+        dest_path="$dest_path/GatewayMgr"
+        ;;
+    "gms")
+        dest_path="$dest_path/GMServer"
+        ;;
+    "lgc")
+        dest_path="$dest_path/LogicServer"
+        ;;
+    *)
+        echo ""
+        echo "  Error: unknow para !!! "
+        EchoUsage
+esac
+
+cd $dest_path
+make -j4 VERSION='\"test\"'

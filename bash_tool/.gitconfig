@@ -1,0 +1,15 @@
+[user]
+	email = autyin@123u.com
+	name = autyin
+[push]
+	default = simple
+[color]
+    status = auto
+    branch = auto
+    interactive = auto
+    diff = auto
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+    trustExitCode = true

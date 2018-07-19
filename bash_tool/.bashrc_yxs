@@ -1,0 +1,78 @@
+
+# yxs
+alias cdbin='cd /home/aut/yxs/GameJoyo/Bin/Release; pwd'
+alias cdjc='cd /home/aut/yxs/GameJoyo/SourceCode; pwd'
+alias cdl='cd /home/aut/yxs/GameJoyo/SourceCode/LogicServer/LogicFrame; pwd'
+alias cdg='cd /home/aut/yxs/THKServer/Game; pwd'
+alias cdgl='cd /home/aut/yxs/THKServer/Game/Global; pwd'
+alias cdpro='cd /home/aut/yxs/THKServer/ProtoSrc; pwd'
+alias cdspro='cd /home/aut/yxs/GameSoCommon/proto; pwd'
+alias cdso='cd /home/aut/yxs/GameSoCommon; pwd'
+alias cdal='cd /home/aut/yxs/AutTest/Logic; pwd'
+alias cdsc='cd /home/aut/yxs/THKServer/Scripts/; pwd'
+alias cdcfg='cd /home/aut/yxs/Client/XLS2CSV/gen_csv; pwd'
+alias cdhcfg='cd /home/aut/yxs/Client/THKConfig/hall_config; pwd'
+alias cdgcfg='cd /home/aut/yxs/Client/THKConfig/game_config; pwd'
+alias cdjsc='cd /home/aut/yxs/GameJoyo/Scripts; pwd'
+
+alias vlog='vim /home/aut/yxs/AutTest/Logic/log/logicsvrd*.log'
+alias vcpro='vim /home/aut/yxs/THKServer/ProtoSrc/THKID.proto'
+alias vph='vim /home/aut/yxs/THKServer/Game/Global/THKPlayer.h'
+alias vpc='vim /home/aut/yxs/THKServer/Game/Global/THKPlayer.cpp'
+alias vglh='vim /home/aut/yxs/THKServer/Game/Global/Global.h'
+alias vglc='vim /home/aut/yxs/THKServer/Game/Global/Global.cpp'
+alias vmpro='vim /home/aut/yxs/THKServer/ProtoSrc/THKHallProto.proto'
+alias vpp='vim /home/aut/yxs/THKServer/ProtoSrc/THKPlayerData.proto'
+alias vcfgh='vim /home/aut/yxs/THKServer/Game/Config/Config.h'
+alias vcfgc='vim /home/aut/yxs/THKServer/Game/Config/Config.cpp'
+alias vglog='vim /home/aut/yxs/AutTest/Logic/log/global_data*.log'
+alias vsipro='vim /home/aut/yxs/GameSoCommon/proto/ProtocalID.proto'
+alias vsmpro='vim /home/aut/yxs/GameSoCommon/proto/SSProto.proto'
+
+alias ba='cd /home/aut/yxs/THKServer/Scripts; pwd && ./build_all.sh fr'
+alias lr='cdal && ./start.sh'
+alias lcr='cd /home/aut/yxs/THKServer/Game; pwd && make && upso && lr'
+alias lacr='cd /home/aut/yxs/THKServer/Scripts; pwd && ./build_all.sh fr && upcfg && upso && lr'
+
+alias vdbmgr='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/DBProcMgr/dbprocmgr_frame.cpp'
+alias vdbproc='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/DBProc/dbproc_frame.cpp'
+alias vgmsvr='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/GMServer/gmserver_frame.cpp'
+alias vgtw='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/Gateway/connector_frame.cpp'
+alias vgmgr='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/GatewayMgr/gatewaymgr_frame.cpp'
+alias vctrl='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/CtrlServer/ctrlserver_frame.cpp'
+alias vlgc='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/LogicServer/LogicFrame/logicserver_logicframe.cpp'
+
+alias tcdctrc='cd /home/aut/yxs/GameJoyo/SourceCode/CtrlServer; pwd'
+alias tcddbc='cd /home/aut/yxs/GameJoyo/SourceCode/DBProc; pwd'
+alias tcddbmc='cd /home/aut/yxs/GameJoyo/SourceCode/DBProcMgr; pwd'
+alias tcdgmc='cd /home/aut/yxs/GameJoyo/SourceCode/GMServer; pwd'
+alias tcdgtwc='cd /home/aut/yxs/GameJoyo/SourceCode/Gateway; pwd'
+alias tcdgtmc='cd /home/aut/yxs/GameJoyo/SourceCode/GatewayMgr; pwd'
+alias tcdlc='cd /home/aut/yxs/GameJoyo/SourceCode/LogicServer/LogicFrame; pwd'
+
+alias tcdctr='cd /home/aut/yxs/AutTest/Ctrl; pwd'
+alias tcddb='cd /home/aut/yxs/AutTest/DBProc; pwd'
+alias tcddbm='cd /home/aut/yxs/AutTest/DBProcMgr; pwd'
+alias tcdgm='cd /home/aut/yxs/AutTest/GMServer; pwd'
+alias tcdgtw='cd /home/aut/yxs/AutTest/Gateway; pwd'
+alias tcdgtm='cd /home/aut/yxs/AutTest/GatewayMgr; pwd'
+alias tcdl='cd /home/aut/yxs/AutTest/Logic; pwd'
+
+alias tlogctr='tlog /home/aut/yxs/AutTest/Ctrl/log/*'
+alias tlogdbp='tlog /home/aut/yxs/AutTest/DBProc/log/*'
+alias tlogdbm='tlog /home/aut/yxs/AutTest/DBProcMgr/log/*'
+alias tloggtw='tlog /home/aut/yxs/AutTest/Gateway/log/*'
+alias tloggtm='tlog /home/aut/yxs/AutTest/GatewayMgr/log/*'
+alias tloggms='tlog /home/aut/yxs/AutTest/GMServer/log/*'
+alias tloglgc='tlog /home/aut/yxs/AutTest/Logic/log/*'
+
+alias glt='got aut_logic'
+
+alias mysql='mysql -h172.168.1.181 -ugame -pgame123u'
+alias redis='redis-cli -h 172.168.1.183'
+
+ulimit -c unlimited
+
+PATH=/home/aut/bin/yxs:$PATH
+
+echo ".bashrc_project init success !"

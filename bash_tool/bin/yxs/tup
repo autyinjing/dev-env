@@ -1,0 +1,69 @@
+#########################################################################
+# File Name: tup.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月13日 星期五 04时52分14秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 测试用更新可执行文件
+
+function EchoUsage() {
+    echo ""
+    echo "  Usage: tup ctr | dbp | dbm | gtw | gtm | gms | lgc"
+    echo ""
+    exit 1
+}
+
+if [ ! $# -eq 1 ]; then
+    EchoUsage
+fi
+
+cd /home/aut/yxs/GameJoyo/Bin/Release
+
+declare dest_path="/home/aut/yxs/AutTest"
+declare src_name
+
+case $1 in
+    "ctr")
+        src_name="ctrlserver"
+        dest_path="$dest_path/Ctrl"
+        ;;
+    "dbp")
+        src_name="dbproc"
+        dest_path="$dest_path/DBProc"
+        ;;
+    "dbm")
+        src_name="dbprocmgr"
+        dest_path="$dest_path/DBProcMgr"
+        ;;
+    "gtw")
+        src_name="gateway"
+        dest_path="$dest_path/Gateway"
+        ;;
+    "gtm")
+        src_name="gatewaymgr"
+        dest_path="$dest_path/GatewayMgr"
+        ;;
+    "gms")
+        src_name="gmserver"
+        dest_path="$dest_path/GMServer"
+        ;;
+    "lgc")
+        src_name="logic"
+        dest_path="$dest_path/Logic"
+        ;;
+    *)
+        echo ""
+        echo "  Error: unknow para !!! "
+        EchoUsage
+esac
+
+declare dest_name="$dest_path/aut_$src_name"
+if [ -f $dest_name ]; then
+    rm -rf $dest_name
+fi
+
+cp $src_name $dest_name

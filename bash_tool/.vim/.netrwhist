@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/data/home/aut/tmp/log'
+let g:netrw_dirhist_2='/data/home/aut/yxs/AutTest/Gateway/config'
+let g:netrw_dirhist_3='/data/home/aut/yxs/AutTest/Logic/config'
+let g:netrw_dirhist_4='/data/home/aut/yxs/GameJoyo/Proto'
+let g:netrw_dirhist_5='/data/home/aut/yxs/AutTest/GatewayMgr/config'
+let g:netrw_dirhist_6='/data/home/aut/yxs/AutTest/DBProc/config'
+let g:netrw_dirhist_7='/data/home/aut/yxs/AutTest/Logic/hall_config'
+let g:netrw_dirhist_8='/data/home/aut/tmp'

@@ -1,0 +1,11 @@
+#########################################################################
+# File Name: cp_to_aut_logic.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月06日 星期五 10时09分06秒
+#########################################################################
+#!/bin/bash
+
+# 编译并拷贝到个人目录
+cd /home/aut/yxs/THKServer/Game; pwd && make -j4
+cp /home/aut/yxs/THKServer/Bin/Release/game.so /home/aut/yxs/AutTest/Logic

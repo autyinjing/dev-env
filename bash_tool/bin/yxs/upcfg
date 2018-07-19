@@ -1,0 +1,22 @@
+#########################################################################
+# File Name: cp_to_aut_logic.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月06日 星期五 10时15分50秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 将所有配置文件拷贝到运行目录
+cd /home/aut/yxs/Client/XLS2CSV/gen_csv
+svn update
+cp ./*.csv /home/aut/yxs/AutTest/Logic/game_config
+
+cd /home/aut/yxs/Client/THKConfig/game_config
+svn update
+cp ./* /home/aut/yxs/AutTest/Logic/game_config
+
+cd /home/aut/yxs/Client/THKConfig/hall_config
+svn update
+cp ./* /home/aut/yxs/AutTest/Logic/hall_config

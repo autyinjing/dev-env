@@ -1,0 +1,13 @@
+#########################################################################
+# File Name: mytscancode.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月12日 星期四 05时55分09秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+declare src_path=`pwd`
+cd ~/bin
+tscancode $src_path

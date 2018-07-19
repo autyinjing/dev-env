@@ -1,0 +1,17 @@
+K 8
+passtype
+V 6
+simple
+K 8
+password
+V 8
+123u123u
+K 15
+svn:realmstring
+V 63
+<svn://172.168.1.205:3690> 02e51ad7-3a86-4eb3-bb00-c27740917396
+K 8
+username
+V 6
+autyin
+END
