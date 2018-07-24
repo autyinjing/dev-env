@@ -13,3 +13,5 @@
 [difftool]
     prompt = false
     trustExitCode = true
+[core]
+    filemode = false
