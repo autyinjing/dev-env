@@ -104,6 +104,7 @@ alias gpull='git pull'
 alias gchk='git checkout'
 alias gdif='git difftool'
 alias gpm='git pull origin master'
+alias gstash='git stash'
 
 # other
 alias ptar='tar -czvf'
@@ -111,10 +112,13 @@ alias utar='tar -xzvf'
 alias c='clear'
 alias lal='ls -alh'
 alias psx='ps x | grep -v grep | grep -v "ps x"'
-alias got='ps -eo pid,etime,cmd | ag -v ag | ag'
+alias got='ps -eo pid,etime,cmd | grep -v grep | grep'
+alias make='make -j4'
+alias makec='make clean && make'
 
 #export PATH=~/bin:/usr/sbin:$PATH
 PATH=/home/aut/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin
+PATH=$PATH:/home/aut/yxs/AutTest/Ctrl/
 
 #export PS1="[^_^]\u@\h:/\W\$ "
 export PS1="[^_^]\[\e[1;35m\]\u\[\e[m\]\[\e[1;31m\]@\[\e[m\]\h:\[\e[1;39m\]/\W\\[\e[m\]$ "

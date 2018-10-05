@@ -86,9 +86,9 @@ set cindent
 set cino=:0g0t0(sus
 
 "编码设置
-set fileencodings=ucs-bom,utf-8,gb2312,gbk,gb18030,big5,euc-jp,euc-kr,latin1
 set encoding=utf8
 set termencoding=utf-8
+set fileencodings=ucs-bom,utf-8,gb2312,gbk,gb18030,big5,euc-jp,euc-kr,latin1
 
 "语言设置
 set langmenu=zh_CN.UTF-8
@@ -121,6 +121,8 @@ set selectmode=
 set keymodel=
 "粘贴时不自动对齐
 set pastetoggle=<F2>
+"设置启用光标行和光标列
+set cursorline cursorcolumn 
 
 " 颜色和主题
 let g:solarized_termcolors=256  

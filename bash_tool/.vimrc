@@ -9,9 +9,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 call vundle#end()
 "source ~/.vim/plugin/ycm.vim
@@ -59,3 +59,4 @@ command  Q  qall
 command  Wq wq
 command  WQ wq
 command  W  w
+command  T %retab!

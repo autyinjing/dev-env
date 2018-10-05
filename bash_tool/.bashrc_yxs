@@ -17,22 +17,27 @@ alias cdjsc='cd /home/aut/yxs/GameJoyo/Scripts; pwd'
 
 alias vlog='vim /home/aut/yxs/AutTest/Logic/log/logicsvrd*.log'
 alias vcpro='vim /home/aut/yxs/THKServer/ProtoSrc/THKID.proto'
+alias vhpro='vim /home/aut/yxs/THKServer/ProtoSrc/THKHallProto.proto'
+alias vppro='vim /home/aut/yxs/THKServer/ProtoSrc/THKPlayerData.proto'
+alias vspro='vim /home/aut/yxs/GameSoCommon/proto/ProtocalID.proto'
+alias vsmpro='vim /home/aut/yxs/GameSoCommon/proto/SSProto.proto'
 alias vph='vim /home/aut/yxs/THKServer/Game/Global/THKPlayer.h'
 alias vpc='vim /home/aut/yxs/THKServer/Game/Global/THKPlayer.cpp'
 alias vglh='vim /home/aut/yxs/THKServer/Game/Global/Global.h'
 alias vglc='vim /home/aut/yxs/THKServer/Game/Global/Global.cpp'
-alias vmpro='vim /home/aut/yxs/THKServer/ProtoSrc/THKHallProto.proto'
-alias vpp='vim /home/aut/yxs/THKServer/ProtoSrc/THKPlayerData.proto'
 alias vcfgh='vim /home/aut/yxs/THKServer/Game/Config/Config.h'
 alias vcfgc='vim /home/aut/yxs/THKServer/Game/Config/Config.cpp'
+alias vdef='vim /home/aut/yxs/THKServer/Game/Common/Define.h'
 alias vglog='vim /home/aut/yxs/AutTest/Logic/log/global_data*.log'
-alias vsipro='vim /home/aut/yxs/GameSoCommon/proto/ProtocalID.proto'
-alias vsmpro='vim /home/aut/yxs/GameSoCommon/proto/SSProto.proto'
+alias vsdkh='vim /home/aut/yxs/THKServer/Game/Global/Sdk.h'
+alias vsdkc='vim /home/aut/yxs/THKServer/Game/Global/Sdk.cpp'
 
 alias ba='cd /home/aut/yxs/THKServer/Scripts; pwd && ./build_all.sh fr'
 alias lr='cdal && ./start.sh'
-alias lcr='cd /home/aut/yxs/THKServer/Game; pwd && make && upso && lr'
+alias lr1='cdal && ./start.sh 1'
+alias lcr='upso && lr'
 alias lacr='cd /home/aut/yxs/THKServer/Scripts; pwd && ./build_all.sh fr && upcfg && upso && lr'
+alias lrlog='lr && sleep 1 && tlog log/global_data_log_*'
 
 alias vdbmgr='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/DBProcMgr/dbprocmgr_frame.cpp'
 alias vdbproc='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/DBProc/dbproc_frame.cpp'
@@ -40,7 +45,7 @@ alias vgmsvr='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/GMServer/gmserve
 alias vgtw='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/Gateway/connector_frame.cpp'
 alias vgmgr='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/GatewayMgr/gatewaymgr_frame.cpp'
 alias vctrl='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/CtrlServer/ctrlserver_frame.cpp'
-alias vlgc='vim /home/aut/yxs/CodeAnalyze/GameJoyo/SourceCode/LogicServer/LogicFrame/logicserver_logicframe.cpp'
+alias vlgc='vim /home/aut/yxs/GameJoyo/SourceCode/LogicServer/LogicFrame/logicserver_logicframe.cpp'
 
 alias tcdctrc='cd /home/aut/yxs/GameJoyo/SourceCode/CtrlServer; pwd'
 alias tcddbc='cd /home/aut/yxs/GameJoyo/SourceCode/DBProc; pwd'
@@ -57,6 +62,7 @@ alias tcdgm='cd /home/aut/yxs/AutTest/GMServer; pwd'
 alias tcdgtw='cd /home/aut/yxs/AutTest/Gateway; pwd'
 alias tcdgtm='cd /home/aut/yxs/AutTest/GatewayMgr; pwd'
 alias tcdl='cd /home/aut/yxs/AutTest/Logic; pwd'
+alias tcdl2='cd /home/aut/yxs/AutTest/Logic_2; pwd'
 
 alias tlogctr='tlog /home/aut/yxs/AutTest/Ctrl/log/*'
 alias tlogdbp='tlog /home/aut/yxs/AutTest/DBProc/log/*'
@@ -64,15 +70,20 @@ alias tlogdbm='tlog /home/aut/yxs/AutTest/DBProcMgr/log/*'
 alias tloggtw='tlog /home/aut/yxs/AutTest/Gateway/log/*'
 alias tloggtm='tlog /home/aut/yxs/AutTest/GatewayMgr/log/*'
 alias tloggms='tlog /home/aut/yxs/AutTest/GMServer/log/*'
-alias tloglgc='tlog /home/aut/yxs/AutTest/Logic/log/*'
 
 alias glt='got aut_logic'
 
 alias mysql='mysql -h172.168.1.181 -ugame -pgame123u'
-alias redis='redis-cli -h 172.168.1.183'
+alias redis='redis-cli -h 172.168.1.251 -p 7001'
+
+alias makeg='cd /home/aut/yxs/THKServer/Game; pwd && make'
+alias makegc='cd /home/aut/yxs/THKServer/Game; pwd && makec'
+alias makecc='cd /home/aut/yxs/THKServer/Game/.objs/Config && rm -rf *.o && cd /home/aut/yxs/THKServer/Game/.objs/Global && rm -rf *.o && cdg && make'
+
+alias sl='ps aux | ag -v ag | ag aut_'
 
 ulimit -c unlimited
 
 PATH=/home/aut/bin/yxs:$PATH
 
-echo ".bashrc_project init success !"
+echo ".bashrc_yxs init success !"
