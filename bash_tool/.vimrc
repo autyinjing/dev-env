@@ -42,6 +42,9 @@ imap <F6> <ESC>:!cd /home/aut/yxs/GameJoyo && retags .<CR><CR> :TlistUpdate<CR>
 map <F7> :!cd /home/aut/yxs/GameSoCommon && retags .<CR><CR> :TlistUpdate<CR>
 imap <F7> <ESC>:!cd /home/aut/yxs/GameSoCommon && retags .<CR><CR> :TlistUpdate<CR>
 
+map <F3> :w <CR> :!python3 "%" <CR>
+imap <F3> <ESC> :w <CR> :!python3 "%" <CR>
+
 set tags=./.tags
 set tags+=/home/aut/yxs/GameJoyo/.tags
 set tags+=/home/aut/yxs/GameSoCommon/.tags
