@@ -2,7 +2,7 @@
 "source $FILE_PATH
 
 "-- 自动插入文件头 --
-autocmd BufNewFile *.c,*.cpp,*.h,*.hpp,*.sh,*.java exec ":call SetTitle()" 
+autocmd BufNewFile *.c,*.cpp,*.h,*.hpp,*.sh,*.py exec ":call SetTitle()" 
 ""定义函数SetTitle，自动插入文件头 
 func SetTitle() 
     "如果文件类型为.sh文件 
@@ -16,8 +16,19 @@ func SetTitle()
         call append(line(".")+5, "\#!/bin/bash") 
         call append(line(".")+6, "") 
         call append(line(".")+7, "set -e") 
-    else 
-        call setline(1,          "/* ***********************************************************************") 
+    endif
+    if &filetype == 'python'
+        call setline(1,"\#########################################################################") 
+        call append(line("."),   "\# File Name: ".expand("%")) 
+        call append(line(".")+1, "\# Author: Aut") 
+        call append(line(".")+2, "\# mail: autyinjing@126.com") 
+        call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
+        call append(line(".")+4, "\#########################################################################") 
+        call append(line(".")+5, "\#!/bin/python3") 
+        call append(line(".")+6, "") 
+    endif
+    if &filetype == 'cpp' || &filetype == 'c'
+        call setline(1,          "\/* ***********************************************************************") 
         call append(line("."),   "")
         call append(line(".")+1, "  > File Name: ".expand("%")) 
         call append(line(".")+2, "  > Author: Aut") 
@@ -36,8 +47,7 @@ func SetTitle()
         call append(line(".")+13, "    return 0;")
         call append(line(".")+14, "}")
         call append(line(".")+15, "")
-    endi
-    f
+    endif
     if &filetype == 'c'
         call append(line(".")+8, "#include <stdio.h>")
         call append(line(".")+9, "")
