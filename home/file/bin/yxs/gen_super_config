@@ -1,0 +1,66 @@
+#########################################################################
+# File Name: gen_super_config.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2019年12月03日 星期二 15时26分27秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+Round=17
+RoundTime=900
+Day=5
+CurrDate=$(date -d '7 days ago' '+%F')
+CurrSecond=$(date +%s)
+CommonFile=/tmp/contest_common.json
+SuperFile=/tmp/contest_super.csv
+LogicPath=/home/aut/yxs/AutTest/Logic
+CtrlPath=/home/aut/yxs/AutTest/Ctrl
+
+SeasonBeginTime=$CurrDate" 05:00:00"
+
+if [ $# -ge 1 ];then
+    Round=$1
+fi
+
+if [ $# -ge 2 ];then
+    Day=$2
+fi
+
+if [ $# -ge 3 ];then
+fi
+
+# 1. 替换contest_common.json中的赛季开始时间为今天
+#ReplaceStr="\"start_time\":\"$SeasonBeginTime\","
+#cat $LogicPath/hall_config/Contest/contest_common.json | sed "s/\"start_time.*/$ReplaceStr/g" > $CommonFile
+#/usr/bin/cp -pR $CommonFile $LogicPath/hall_config/Contest/
+#/usr/bin/cp -pR $CommonFile $CtrlPath/thkctrl_config/Contest/
+
+
+# 2. 生成contest_super.csv的配置
+echo "team_cnt,begin_time,name,score" > $SuperFile
+
+for((i=$Round;i>4;i=$[$i-2]));
+do
+    TeamCnt=$[2**$[$i/2]]
+    CurrRoundTime=$[$CurrSecond+RoundTime]
+    RoundStr="$Day;"$(date -d@$CurrRoundTime +"%H:%M:%S")
+    RoundName="第1轮"
+    Score=100
+    ScoreStr=$Score
+    for((j=1;j<$i;j+=1));
+    do
+        CurrRoundTime=$[$CurrRoundTime+RoundTime]
+        RoundStr=$RoundStr"|$Day;"$(date -d@$CurrRoundTime +"%H:%M:%S")
+        RoundName=$RoundName"|第"$[j+1]"轮"
+        Score=$[$[$j+1]*100]
+        ScoreStr=$ScoreStr"|"$Score
+    done
+
+    Line=$TeamCnt","$RoundStr","$RoundName","$ScoreStr
+    echo $Line >> $SuperFile
+done
+
+/usr/bin/cp -pR $SuperFile $LogicPath/hall_config/Contest/
+/usr/bin/cp -pR $SuperFile $CtrlPath/thkctrl_config/Contest/

@@ -1,0 +1,13 @@
+#########################################################################
+# File Name: /home/aut/bin/yxs/update_so.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2019年12月27日 星期五 15时43分39秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+scp /home/aut/yxs/AutTest/Logic/aut_logic root@10.0.150.37:/data/servers/contest
+scp /home/aut/yxs/AutTest/Logic/game.so root@10.0.150.37:/data/servers/contest
+scp /home/aut/yxs/AutTest/Ctrl/aut_ctrlserver root@10.0.150.37:/data/servers/contest

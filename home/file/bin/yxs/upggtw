@@ -1,0 +1,12 @@
+#########################################################################
+# File Name: upggtw.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2019年06月11日 星期二 12时01分11秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+cd /home/aut/yxs/AutTest/Go-Gateway; pwd && go build -o ./aut_go-gateway $GOPATH/src/main.go && kill $(cat ./gateway.pid) || ./aut_go-gateway -d
+cd /home/aut/yxs/AutTest/Go-Gateway-2; pwd &&  go build -o ./aut_go-gateway-2 $GOPATH/src/main.go && kill $(cat ./gateway.pid) || ./aut_go-gateway-2 -d

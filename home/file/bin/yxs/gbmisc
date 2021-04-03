@@ -1,0 +1,15 @@
+#########################################################################
+# File Name: gbmisc.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2020年02月22日 星期六 13时08分39秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+BinDstPath=/home/aut/yxs/AutTest/Misc/
+OldPath=$GOPATH
+
+export GOPATH=/home/aut/yxs/Misc
+go build -o $BinDstPath/aut_Misc $GOPATH/src/main.go

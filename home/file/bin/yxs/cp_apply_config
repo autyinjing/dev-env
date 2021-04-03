@@ -1,0 +1,19 @@
+#########################################################################
+# File Name: cp_apply_config.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2019年12月17日 星期二 18时37分25秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+if [ $1 == "1" ]; then
+    cp -pR ~/contest/contest_common.json.apply ~/yxs/AutTest/Logic/hall_config/Contest/contest_common.json
+    cp -pR ~/contest/contest_common.json.apply ~/yxs/AutTest/Ctrl/thkctrl_config/Contest/contest_common.json
+fi
+
+if [ $1 == "2" ]; then
+    cp -pR ~/contest/contest_common.json.super ~/yxs/AutTest/Logic/hall_config/Contest/contest_common.json
+    cp -pR ~/contest/contest_common.json.super ~/yxs/AutTest/Ctrl/thkctrl_config/Contest/contest_common.json
+fi

@@ -1,0 +1,19 @@
+#########################################################################
+# File Name: tcus.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月14日 星期六 02时16分54秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 编译 + 更新 + 重启
+if [ $# -lt 1 ]; then
+    echo ""
+    echo "  Usage: tcus ctr | dbp | dbm | gtw | gtm | gms | lgc"
+    echo ""
+    exit 1
+fi
+
+tmake $1 && tup $1 && tstart $1 $2

@@ -1,0 +1,17 @@
+#########################################################################
+# File Name: /home/aut/bin/yxs/to37.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2020年02月24日 星期一 23时37分09秒
+#########################################################################
+#!/bin/bash
+
+if [ $# -lt 1 ];then
+    echo "    Para too little!"
+    exit 1
+fi
+
+for var in $@
+do
+    scp $var root@10.0.150.37:/data/servers/packages/bins/game
+done

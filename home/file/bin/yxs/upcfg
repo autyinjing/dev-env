@@ -1,0 +1,30 @@
+#########################################################################
+# File Name: cp_to_aut_logic.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月06日 星期五 10时15分50秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 将所有配置文件拷贝到运行目录
+#cd /home/aut/yxs/Client/XLS2CSV/gen_csv
+#svn update
+#cp ./*.csv /home/aut/yxs/AutTest/Logic/game_config
+#cp ./*.csv /home/aut/yxs/AutTest/Logic_2/game_config
+
+cd /home/aut/yxs/Client/design_config/wechatgame/server_config/game_config
+git fetch && git merge origin/master
+cp -pR ./* /home/aut/yxs/AutTest/Logic/game_config
+
+cd /home/aut/yxs/Client/design_config/wechatgame/server_config/hall_config
+cp -pR ./* /home/aut/yxs/AutTest/Logic/hall_config
+cp -pR ./Contest/* /home/aut/yxs/AutTest/Ctrl/thkctrl_config/Contest/
+cp -pR ./universe /home/aut/yxs/AutTest/Ctrl/thkctrl_config/
+
+cp -pR /home/aut/yxs/Client/design_config/wechatgame/server_config/thkctrl_config/* /home/aut/yxs/AutTest/Ctrl/thkctrl_config
+
+cd /home/aut/yxs/Client/design_config/platform
+cp -pR ./*.json /home/aut/yxs/AutTest/Logic/hall_config
+cp -pR ./wechat/*.json /home/aut/yxs/AutTest/Logic/hall_config

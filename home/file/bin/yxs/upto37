@@ -1,0 +1,19 @@
+#########################################################################
+# File Name: upto37.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2020年10月12日 星期一 16时29分09秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+LogicPath='/data/home/aut/yxs/AutTest/Logic/'
+CtrlPath='/data/home/aut/yxs/AutTest/Ctrl/'
+
+scp $LogicPath/aut_logic root@10.0.150.37:/data/servers/packages/bins/framework/logic
+scp $LogicPath/game.so root@10.0.150.37:/data/servers/packages/bins/game/game.so
+scp -r $LogicPath/game_config root@10.0.150.37:/data/servers/packages/bins/game/
+scp -r $LogicPath/hall_config root@10.0.150.37:/data/servers/packages/bins/game/
+scp $CtrlPath/aut_ctrlserver root@10.0.150.37:/data/servers/packages/bins/framework/ctrlserver
+scp -r $CtrlPath/thkctrl_config root@10.0.150.37:/data/servers/packages/bins/game/

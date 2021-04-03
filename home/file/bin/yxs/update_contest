@@ -1,0 +1,20 @@
+#########################################################################
+# File Name: update_contest.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2019年09月26日 星期四 10时29分44秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 打包logic
+cd /home/aut/yxs/AutTest/Logic
+tar -czf ~/tmp/contest_update/contest_logic.tar.gz aut_logic game.so hall_config/Contest/ hall_config/hall_server.json hall_config/prop.csv hall_config/battlemode.csv game_config/game_tip.csv game_config/info_ai.csv hall_config/Honour/HonourBalance.csv
+
+# 打包ctrl
+cd /home/aut/yxs/AutTest/Ctrl
+tar -czf ~/tmp/contest_update/contest_ctrl.tar.gz aut_ctrlserver thkctrl_config/Contest/
+
+# 更新包
+scp ~/tmp/contest_update/* dev@10.1.5.142:/tmp/

@@ -1,0 +1,21 @@
+#########################################################################
+# File Name: fpro.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2018年07月27日 星期五 20时18分26秒
+#########################################################################
+#!/bin/bash
+
+#set -e
+
+echo ""
+echo -e "\033[34m********** THKServer **********\033[0m"
+cd /home/aut/yxs/THKServer/ProtoSrc; pwd
+echo ""
+agr $1
+
+echo ""
+echo -e "\033[34m********** GameSoCommon **********\033[0m"
+cd /home/aut/yxs/GameSoCommon/proto; pwd
+echo ""
+agr $1

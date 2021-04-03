@@ -1,0 +1,16 @@
+#########################################################################
+# File Name: makegc.sh
+# Author: Aut
+# mail: autyinjing@126.com
+# Created Time: 2019年02月22日 星期五 14时21分28秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+TMP_FILE="Makefile_aut"
+cd /home/aut/yxs/THKServer/Game; pwd && make clean
+#cat Makefile_Debug | sed 's/g++/\/usr\/libexec\/icecc\/bin\/g++/' > $TMP_FILE
+cat Makefile_Debug > $TMP_FILE
+make -f $TMP_FILE -j16
+mv $TMP_FILE /tmp/$TMP_FILE

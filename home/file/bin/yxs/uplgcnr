@@ -1,0 +1,13 @@
+#########################################################################
+# File Name: uplgc.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月10日 星期二 23时12分34秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 更新logic到个人目录
+cp /home/aut/yxs/GameJoyo/Bin/Release/logic /home/aut/yxs/AutTest/Logic/aut_logic
+cp /home/aut/yxs/GameJoyo/Bin/Release/logic /home/aut/yxs/AutTest/Logic_2/aut_logic_2

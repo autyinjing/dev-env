@@ -1,0 +1,19 @@
+#########################################################################
+# File Name: tlog.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月13日 星期五 21时26分55秒
+#########################################################################
+#!/bin/bash
+
+set -e
+
+# 使用tail实时刷新文件内容
+if [ ! $# -eq 1 ]; then
+    echo ""
+    echo "  Usage: tlog fname"
+    echo ""
+    exit 1
+fi
+
+tail -f $1 -n 10

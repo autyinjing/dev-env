@@ -1,0 +1,37 @@
+#########################################################################
+# File Name: lcr.sh
+# Author: Aut
+# mail: aut@taomee.com
+# Created Time: 2018年07月06日 星期五 10时19分40秒
+#########################################################################
+#!/bin/bash
+
+# 运行失败则退出，防止引起其他错误
+set -e
+
+function Echo() {
+	echo -e ""
+	echo -e "\033[34m======== $1 ========\033[0m"
+}
+
+## 1. 更新业务逻辑代码，并更新game.so
+#Echo "git pull origin master"
+#cd /home/aut/yxs/THKServer
+#git checkout master && git pull && git checkout aut && git merge master -m "合并master到aut"
+
+Echo "build_all"
+cd /home/aut/yxs/THKServer/Scripts
+./build_all.sh fr
+
+Echo "update game.so"
+sh upso
+
+# 2. 更新表
+Echo "update *.csv"
+cd /home/aut/yxs/Client/XLS2CSV/gen_csv
+sh upcfg
+
+# 3. 重启服务
+Echo "start aut_logic"
+cd /home/aut/yxs/AutTest/Logic
+./start.sh $1
