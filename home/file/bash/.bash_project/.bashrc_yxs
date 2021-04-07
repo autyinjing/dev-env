@@ -162,6 +162,7 @@ alias ka="tstop dbm && tstop dbp && tstop gtm && tstop gtw && tstop ctr && tstop
 alias bgtw="go build gateway/"
 alias grgtw="go build -o ./main $GOPATH/src/gateway/main.go && ./main"
 alias mrsync="rsync -av --progress -e 'ssh -i /home/aut/.ssh/id_rsa -p 22'" 
+alias to34="cdal && mrsync game.so root@192.168.11.90:/data/publish/publish_thk_dev_time1/Bin/game/ && cd -"
 
 ulimit -c unlimited
 
