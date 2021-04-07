@@ -29,6 +29,7 @@ Sync file/bash/ ~/
 # ssh
 Mkdir ~/.ssh
 Sync file/ssh/ ~/.ssh/
+chmod 600 ~/.ssh/id_rsa
 
 # vim
 Sync file/vim/ ~/
