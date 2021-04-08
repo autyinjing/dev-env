@@ -92,6 +92,11 @@ do
     ECHO "$file init success ."
 done
 
+# 加载自定义脚本
+if [ -f "$HOME/.bashrc_self" ];then
+    . $HOME/.bashrc_self
+fi
+
 ECHO ""
 ECHO "... Hello World ! ..."
 ECHO ""
