@@ -1,0 +1,57 @@
+
+# act
+
+project_path="$HOME/act"
+gamejoyo_path="$project_path/GameJoyo"
+gamesocommon_path="$project_path/GameSoCommon"
+thkserver_path="$project_path/ACTServer"
+test_path="$project_path/Test"
+
+alias tcdctrc="cd $gamejoyo_path/SourceCode/CtrlServer; pwd"
+alias tcddbc="cd $gamejoyo_path/SourceCode/DBProc; pwd"
+alias tcdgtwc="cd $gamejoyo_path/SourceCode/Gateway; pwd"
+alias tcdlc="cd $gamejoyo_path/SourceCode/LogicServer/LogicFrame; pwd"
+alias tcdcenterc="cd $gamejoyo_path/SourceCode/Golang/src/centerserver/server; pwd"
+
+alias cdspro="cd $gamesocommon_path/proto; pwd"
+alias cdso="cd $gamesocommon_path; pwd"
+alias vspro="vim $gamesocommon_path/proto/ProtocalID.proto"
+alias vsmpro="vim $gamesocommon_path/proto/SSProto.proto"
+
+alias cdg="cd $thkserver_path/Game; pwd"
+alias cdpro="cd $thkserver_path/ProtoSrc; pwd"
+alias cdh="cd $thkserver_path/Game/Hall; pwd"
+alias vglh="vim $thkserver_path/Game/Global/Global.h"
+alias vglc="vim $thkserver_path/Game/Global/Global.cpp"
+alias vdef="vim $thkserver_path/Game/Common/Define.h"
+
+alias cdal="cd $test_path/Logic; pwd"
+alias tcdctr="cd $test_path/Ctrl; pwd"
+alias tcddb="cd $test_path/DBProc; pwd"
+alias tcdgtw="cd $test_path/Gateway; pwd"
+alias tcdcenter="cd $test_path/Center; pwd"
+alias vglog="vim $test_path/Logic/log/global_data*.log"
+alias cdgm="cd $test_path/Ctrl/gm_util; pwd"
+alias cdmc="cd $test_path/Misc; pwd"
+
+alias mysql="mysql -h10.0.128.202 -ugame -pgame123u"
+alias redis="redis-cli -h 10.0.128.219 -p 7001"
+
+alias sl="ps aux | ag -v ag | ag aut_"
+
+alias mrsync="rsync -av --progress -e 'ssh -i /home/aut/.ssh/id_rsa -p 22'" 
+
+ulimit -c unlimited
+
+unset http_proxy
+unset https_proxy
+
+export PATH=$PATH:$test_path/Ctrl/gm_util
+export PATH=/home/aut/bin/yxs:$PATH
+export PTD=$test_path/Prototester/MiscBin/thkprotos/
+
+source /opt/rh/devtoolset-8/enable
+export CPLUS_INCLUDE_PATH=/opt/rh/devtoolset-8/root/usr/include/c++/8/:$CPLUS_INCLUDE_PATH
+export LIBRARY_PATH=/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:$LIBRARY_PATH
+
+alias conf_act="vim ~/.bashrc_act"
