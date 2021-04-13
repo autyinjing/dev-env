@@ -13,7 +13,7 @@ complete -C $HOME/bin/gocomplete go
 
 # ***** 环境变量
 export EDITOR="vim"
-export PATH=$HOME/bin:$PATH:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/usr/python/bin:/usr/local/go/bin
+export PATH=$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/usr/python/bin:/usr/local/go/bin
 export GOPATH="/home/aut/yxs/GameJoyo/SourceCode/Golang"
 export PS1="[^_^]\[\e[1;35m\]\u\[\e[m\]\[\e[1;31m\]@\[\e[m\]\h:\[\e[1;39m\]/\W\\[\e[m\]$ "
 export LANG=zh_CN.UTF8
@@ -31,20 +31,20 @@ alias rm="rm -i"
 alias df="df -h"
 alias grep="grep --color=auto"
 alias cp="cp -i -rf " 
-alias conf_bash='vim ~/.bashrc'
+alias conf_bash='vim ~/github/dev-env/home/file/bash/.bashrc'
 alias conf_vim='vim ~/.vimrc'
-alias rbash='. ~/.bashrc'
 alias ptar='tar -czvf'
 alias utar='tar -xzvf'
 alias c='clear'
 alias lal='ls -alh'
 alias psx='ps x | grep -v grep | grep -v "ps x"'
 alias makec='make clean && make'
-alias mcp='/usr/bin/cp -pR'
+alias mcp='/usr/bin/cp -prR'
 alias mpython='/usr/python/bin/python3'
 alias cman='man -M /usr/local/zhman/share/man/zh_CN'
 alias got='ps -eo pid,etime,cmd | grep -v grep | grep'
 alias gdb='gdb -q'
+alias rbash="cd $HOME/github/dev-env/home/ && bash install.sh && . ~/.bashrc"
 
 # vim
 alias vim='/usr/local/bin/vim'

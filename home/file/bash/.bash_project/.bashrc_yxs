@@ -177,4 +177,4 @@ source /opt/rh/devtoolset-8/enable
 export CPLUS_INCLUDE_PATH=/opt/rh/devtoolset-8/root/usr/include/c++/8/:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:$LIBRARY_PATH
 
-alias conf_yxs="vim ~/.bashrc_yxs"
+alias conf_yxs="vim $HOME/github/dev-env/home/file/bash/.bash_project/.bashrc_yxs"
