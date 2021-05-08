@@ -147,7 +147,6 @@ alias fup="tmake pto 1 && tcdlc && cd ../ && make clean && tcdctrc && make clean
 alias u="upso && cr && lr"
 alias upro="cd $thkserver_path/ProtoSrc && bash build_cpp.sh && cd ../Proto && make -j8 && u"
 alias glt="got aut_logic"
-alias mysql="mysql -h10.0.128.202 -ugame -pgame123u"
 alias redis="redis-cli -h 10.0.128.219 -p 7001"
 
 alias makeg="cd $thkserver_path/Game; pwd && make -f Makefile_aut -j32 && mv $thkserver_path/Game/Makefile_aut /tmp/"

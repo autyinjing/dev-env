@@ -4,6 +4,10 @@ function ECHO() {
     [[ $- == *i* ]] && echo $1
 }
 
+if [ -f /etc/profile ];then
+    . /etc/profile
+fi
+
 # ***** 其他模块的配置文件
 # git自动补全
 source ~/.git-completion.bash
@@ -32,7 +36,7 @@ alias df="df -h"
 alias grep="grep --color=auto"
 alias cp="cp -i -rf " 
 alias conf_bash='vim ~/github/dev-env/home/file/bash/.bashrc'
-alias conf_vim='vim ~/.vimrc'
+alias conf_vim='vim ~/github/dev-env/home/file/vim/.vimrc'
 alias ptar='tar -czvf'
 alias utar='tar -xzvf'
 alias c='clear'

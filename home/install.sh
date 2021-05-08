@@ -32,7 +32,7 @@ Sync file/ssh/ ~/.ssh/
 chmod 600 ~/.ssh/id_rsa
 
 # vim
-Sync file/vim/ ~/
+#Sync file/vim/ ~/
 
 # git
 Sync file/git/ ~/
@@ -41,5 +41,5 @@ Sync file/git/ ~/
 Sync file/gdb/ ~/
 
 # bin
-Mkdir ~/bin
-Sync file/bin/ ~/bin/
+#Mkdir ~/bin
+#Sync file/bin/ ~/bin/
