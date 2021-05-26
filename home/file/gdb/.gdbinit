@@ -13,3 +13,10 @@ set print array-indexes on
  
 # 每行打印一个结构体成员
 set print pretty on
+
+python
+import sys
+sys.path.insert(0, '/opt/rh/devtoolset-8/root/usr/share/gdb/python')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers (None)
+end
