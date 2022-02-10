@@ -145,9 +145,11 @@ alias uplgc="tmake lgc && tup lgc && tstart lgc"
 alias uptohall="tmake pto && tcdlc && cd ../ && make clean && uplgc && tcdctrc && make clean && upctr && cdg && makegc && upso && cr && lcr"
 alias fup="tmake pto 1 && tcdlc && cd ../ && make clean && tcdctrc && make clean && makegc && /usr/bin/cp -pR $thkserver_path/Bin/Debug/game.so $test_path/Logic && upctr && uplgc"
 alias u="upso && cr && lr"
-alias upro="cd $thkserver_path/ProtoSrc && bash build_cpp.sh && cd ../Proto && make -j8 && u"
+alias upro="cd $thkserver_path/ProtoSrc && bash build_cpp.sh && cd ../Proto && make clean && make -j4 && u"
+alias uppro="cd $thkserver_path/ProtoSrc && bash build_cpp.sh"
 alias glt="got aut_logic"
 alias redis="redis-cli -h 10.0.128.219 -p 7001"
+alias rb="cdg && cd ../Scripts/ && bash build_all.sh fd4"
 
 alias makeg="cd $thkserver_path/Game; pwd && make -f Makefile_aut -j32 && mv $thkserver_path/Game/Makefile_aut /tmp/"
 alias makecc="cd $thkserver_path/Game/.objs/Config && rm -rf *.o && cd $thkserver_path/Game/.objs/Global && rm -rf *.o && cd $thkserver_path/Game/.objs/Hall && rm -rf *.o && cdg && make"
@@ -169,7 +171,8 @@ unset http_proxy
 unset https_proxy
 
 export PATH=$PATH:$test_path/Ctrl/gm_util
-export PATH=/home/aut/bin/yxs:$PATH
+export PATH=$HOME/bin/yxs:$PATH
+#export PATH=/home/aut/bin/yxs:$PATH
 export PTD=$test_path/Prototester/MiscBin/thkprotos/
 
 source /opt/rh/devtoolset-8/enable

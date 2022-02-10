@@ -62,8 +62,6 @@ alias auplgc="tcdlc && cd .. && make -j16 -f Makefile_Debug && rm -rf $logic_pat
 alias u="aupso && tcdctr && ./start.sh && cdal && ./start.sh"
 alias rb="cd $server_path/Scripts/ && bash build_all.sh fd && cd -"
 
-alias upcfg="cd $config_path/$working_config_dir/ && svn up && rsync -av --progress $config_path/ $test_config_path/ && rsync -av --progress $config_path/Common_lock/ $test_config_path/Common && rsync -av --progress $config_path/$working_config_dir/ $test_config_path/Common && rsync -av --progress $test_config_path/ServerEditorConfig/* $logic_path/hall_config/ && cd $server_path/Scripts/configScripts/ && python excel2json.py && rsync -av --progress $server_path/Config/serverConfig.json $logic_path/hall_config/"
-
 alias redis="redis-cli -h 10.0.128.219 -p 7001"
 
 alias sl="ps aux | ag -v ag | ag aut_"

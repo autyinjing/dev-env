@@ -7,6 +7,7 @@
 #!/bin/bash
 
 # 编译并拷贝到个人目录
-cd /home/aut/yxs/THKServer/Game; pwd && make -j16 -f Makefile_Debug
-cp /home/aut/yxs/THKServer/Bin/Debug/game.so /home/aut/yxs/AutTest/Logic
-cp /home/aut/yxs/THKServer/Bin/Debug/game.so /home/aut/yxs/AutTest/Ctrl
+DIR=~/
+cd $DIR/yxs/THKServer/Game; pwd && make -j16 -f Makefile_Debug
+cp $DIR/yxs/THKServer/Bin/Debug/game.so $DIR/yxs/AutTest/Logic
+cp $DIR/yxs/THKServer/Bin/Debug/game.so $DIR/yxs/AutTest/Ctrl

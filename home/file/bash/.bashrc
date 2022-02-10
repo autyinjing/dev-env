@@ -17,7 +17,7 @@ complete -C $HOME/bin/gocomplete go
 
 # ***** 环境变量
 export EDITOR="vim"
-export PATH=$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/usr/python/bin:/usr/local/go/bin
+export PATH=$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/usr/python/bin:/usr/local/go/bin:/root/v8/depot_tools
 export GOPATH="/home/aut/yxs/GameJoyo/SourceCode/Golang"
 export PS1="[^_^]\[\e[1;35m\]\u\[\e[m\]\[\e[1;31m\]@\[\e[m\]\h:\[\e[1;39m\]/\W\\[\e[m\]$ "
 export LANG=zh_CN.UTF8
